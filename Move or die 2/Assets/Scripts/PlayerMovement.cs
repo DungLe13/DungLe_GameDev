@@ -4,18 +4,31 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
 	public float speed = 10f;
-	private Rigidbody2D playerRigid;
-
+	public float jumpHeight=20f;
+	private Rigidbody2D player1Rigid;
 	void Start () {
 	
 	}
+
+	void Update(){
+		if (Input.GetKeyDown ("space")) {
+			player1Rigid.velocity = new Vector2 (player1Rigid.velocity.x, player1Rigid.position.y+jumpHeight);
+
+		}
+		
+	
+	
+	
+	}
+
 	
 	void FixedUpdate () {
-		float movement = Input.GetAxis ("Horizontal");
-		playerRigid = GetComponent<Rigidbody2D>();
-		playerRigid.velocity = new Vector2 (movement * speed, playerRigid.velocity.y);
+		float horizontal_movement = Input.GetAxis ("Horizontal");
+		//float vertical_movement = Input.GetAxis ("Jump");
+		player1Rigid = GetComponent<Rigidbody2D>();
+		player1Rigid.velocity = new Vector2 (horizontal_movement * speed, player1Rigid.velocity.y);
+		//player1Rigid.velocity = new Vector2 (player1Rigid.velocity.x, vertical_movement * speed);
 
-		//GetComponent<Rigidbody2D>().velocity = new Vector2 (movement * speed, rigidbody2D.velocity.y);
 
 	}
 }
