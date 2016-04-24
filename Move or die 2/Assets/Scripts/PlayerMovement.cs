@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public float speed = 10f;
 	public float jumpHeight = 20f;
-	double previousY;
+	public double previousY;
 	private Rigidbody2D player1Rigid;
 	bool letsJump;
 
