@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public float speed = 10f;
 	public float jumpHeight = 20f;
-	public double previousY;
+	public float previousY;
 	private Rigidbody2D player1Rigid;
 	bool letsJump;
 
@@ -16,14 +16,15 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	void Update(){
-		double currentY = GetComponent<Rigidbody2D> ().position.y;
-		if (currentY != previousY) {
-			letsJump = false;
-			Debug.Log ("false");
+		float currentY = GetComponent<Rigidbody2D> ().position.y;
 
-		} else {
+		if (Mathf.Abs(currentY - previousY)<0.001) {
 			letsJump = true;
 			Debug.Log ("true");
+
+		} else {
+			letsJump = false;
+			Debug.Log ("false");
 
 		}
 		if ((Input.GetKeyDown ("x"))&&(letsJump==true)) {
