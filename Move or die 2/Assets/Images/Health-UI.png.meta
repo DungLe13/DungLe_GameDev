@@ -1,0 +1,127 @@
+fileFormatVersion: 2
+guid: c1035b71f9eb749499044aec2bf9250a
+timeCreated: 1462390384
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Health-UI_0
+    21300002: Health-UI_1
+    21300004: Health-UI_2
+    21300006: Health-UI_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Health-UI_0
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 636
+        width: 250
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -125, y: 25}
+        - {x: -125, y: -25}
+        - {x: 125, y: -25}
+        - {x: 125, y: 25}
+    - name: Health-UI_1
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 638
+        width: 250
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -125, y: 25}
+        - {x: -125, y: -25}
+        - {x: 125, y: -25}
+        - {x: 125, y: 25}
+    - name: Health-UI_2
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 367
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40, y: 54}
+        - {x: -54, y: 46}
+        - {x: -54, y: -40}
+        - {x: -46, y: -54}
+        - {x: 54, y: -54}
+        - {x: 54, y: 54}
+    - name: Health-UI_3
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 370
+        width: 112
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: -34}
+        - {x: -48, y: -55}
+        - {x: 36, y: -55}
+        - {x: 56, y: -45}
+        - {x: 56, y: 45}
+        - {x: 52, y: 55}
+        - {x: -53, y: 55}
+        - {x: -56, y: 49}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
