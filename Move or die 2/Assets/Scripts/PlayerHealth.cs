@@ -5,8 +5,8 @@ using System;
 
 public class PlayerHealth : MonoBehaviour {
 
-    public int startingHealth = 100;
-    public int currentHealth;
+    public float startingHealth = 1;
+    public float currentHealth;
     public Vector2 previousPosition;
     Vector2 currentPosition;
     
@@ -37,17 +37,17 @@ public class PlayerHealth : MonoBehaviour {
         if (currentPosition == previousPosition)
         {
             damaged = true;
-            currentHealth -= 1;
+            currentHealth -= 0.01f;
             content.fillAmount = currentHealth;
         } else
         {
             damaged = false;
-            currentHealth += 30;
+            currentHealth += 0.03f;
             content.fillAmount = currentHealth;
 
-            if (currentHealth >= 100)
+            if (currentHealth >= 1)
             {
-                currentHealth = 100;
+                currentHealth = 1;
             }
         }
 
