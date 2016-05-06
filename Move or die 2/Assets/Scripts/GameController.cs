@@ -1,15 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 	public GameObject bomb;
 
+    public PlayerHealth playerHealth;
+    public float restartDelay = 5f;
+    public Image timer;
+
+    Animator anim;
+    float restartTimer;
+
+    float timeLeft = 60f;
+
+    void Awake()
+    {
+        anim = GetComponent <Animator>();
+    }
 
 	void Start(){
 		StartCoroutine (Spawn ());
 	
-	
 	}
+
+    void Update()
+    {
+        timeLeft -= Time.deltaTime;
+
+        if (playerHealth.currentHealth <= 0 || timeLeft <= 0)
+        {
+            anim.SetTrigger("GameOver");
+            restartTimer += Time.deltaTime;
+
+            if (restartTimer >= restartDelay)
+            {
+                playerHealth.RestartLevel();
+            }
+        }
+    }
 
 	IEnumerator Spawn(){
 		yield return new WaitForSeconds (1.0f);

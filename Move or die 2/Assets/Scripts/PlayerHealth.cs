@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 
@@ -53,6 +54,12 @@ public class PlayerHealth : MonoBehaviour {
 
         previousPosition = currentPosition;
 
+        // By falling down
+        if (currentPosition.y <= -14)
+        {
+            currentHealth = 0;
+        }
+
         // By being hit by bombs
 
         if (currentHealth <= 0 && !isDead)
@@ -66,5 +73,10 @@ public class PlayerHealth : MonoBehaviour {
         isDead = true;
         Destroy(this.gameObject);
         playerMovement.enabled = false;
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(0);
     }
 }
