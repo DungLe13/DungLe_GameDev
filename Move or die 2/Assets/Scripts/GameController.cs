@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 	public GameObject bomb;
 
-    public PlayerHealth playerHealth;
+    [HideInInspector] public PlayerHealth playerHealth;
     public float restartDelay = 5f;
     public Image timer;
 
