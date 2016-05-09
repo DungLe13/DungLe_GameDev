@@ -10,18 +10,26 @@ using System.Collections;
 	//public float m_MaxLifeTime = 2f;                    
 	public float explosionRadius = 5f;  
 	void OnTriggerEnter2D(Collider2D other){
-		/* This part is based on the tank tutorial
-		Collider2D[] colliders =Physics2D.OverlapCircle(transform.position, explosionRadius, playerMask);
+		PlayerHealth playerHealth = other.GetComponent<PlayerHealth> ();
+		if (playerHealth) {
+			Debug.Log ("Player!");
+			playerHealth.Death ();
+			Destroy (gameObject);
+
+
+		}
+
+		 //This part is based on the tank tutorial
+		Collider2D[] colliders =Physics2D.OverlapCircleAll(transform.position, explosionRadius);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			Rigidbody targetRigidbody = colliders[i].GetComponent<Rigidbody> ();
 			if (!targetRigidbody)
 				continue;
-			PlayerHealth playerHealth = targetRigidbody.GetComponent<PlayerHealth>();
+			//PlayerHealth playerHealth = targetRigidbody.GetComponent<PlayerHealth>();
 			if (!playerHealth)
 				continue;
-
-			playerHealth.Death();
+			Debug.Log ("dead");
 		}
 		explosion.transform.parent = null;
 
@@ -32,8 +40,9 @@ using System.Collections;
 		Destroy (explosion.gameObject, explosion.duration);
 
 		Destroy (gameObject);
-		*/
 
+
+		/*
 			
 		if (other.tag == "Player" || other.tag=="ground") {
 			other.gameObject.GetComponent<PlayerHealth> ().Death ();
@@ -43,7 +52,7 @@ using System.Collections;
 
 
 
-		}
+		}*/
 	}
 }
 

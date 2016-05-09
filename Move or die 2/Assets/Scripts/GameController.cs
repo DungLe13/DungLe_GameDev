@@ -45,11 +45,11 @@ public class GameController : MonoBehaviour {
 		while (true) {
 
 
-			Vector3 spawnPosition = new Vector3 (Random.Range (-10.0F, 10.0F), transform.position.y, 0.0f);
+			Vector3 spawnPosition = new Vector3 (Random.Range (-10.0F, 10.0F), transform.position.y+10.0f, 0.0f);
 			Quaternion spawnRotation = Quaternion.identity; 
 			Instantiate (bomb, spawnPosition, spawnRotation);
 
-			yield return new WaitForSeconds (2.0f);
+			yield return new WaitForSeconds (0.2f);
 		}
 	}
 }
