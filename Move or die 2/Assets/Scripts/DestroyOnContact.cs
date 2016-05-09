@@ -10,6 +10,7 @@ using System.Collections;
 	//public float m_MaxLifeTime = 2f;                    
 	public float explosionRadius = 5f;  
 	void OnTriggerEnter2D(Collider2D other){
+		/* This part is based on the tank tutorial
 		Collider2D[] colliders =Physics2D.OverlapCircle(transform.position, explosionRadius, playerMask);
 		for (int i = 0; i < colliders.Length; i++)
 		{
@@ -31,9 +32,10 @@ using System.Collections;
 		Destroy (explosion.gameObject, explosion.duration);
 
 		Destroy (gameObject);
+		*/
 
 			
-		/*if (other.tag == "Player" || other.tag=="ground") {
+		if (other.tag == "Player" || other.tag=="ground") {
 			other.gameObject.GetComponent<PlayerHealth> ().Death ();
 			Quaternion randomRotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
 			Instantiate(explosion, transform.position,randomRotation);
@@ -41,7 +43,7 @@ using System.Collections;
 
 
 
-		}*/
+		}
 	}
 }
 
