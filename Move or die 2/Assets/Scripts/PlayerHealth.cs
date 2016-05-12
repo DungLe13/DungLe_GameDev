@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour {
     public Image content;
 
     PlayerMovement playerMovement;
-    bool isDead;
+    public bool isDead;
     bool damaged;
 
     void Awake()
