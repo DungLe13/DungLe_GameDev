@@ -11,12 +11,20 @@ using System.Collections;
 	public float explosionRadius = 5f;  
 	void OnTriggerEnter2D(Collider2D other){
 		PlayerHealth playerHealth = other.GetComponent<PlayerHealth> ();
+
 		if (playerHealth) {
 			Debug.Log ("Player!");
 			playerHealth.Death ();
 			Destroy (gameObject);
+			}
+		GameObject player= GameObject.FindGameObjectWithTag ("Player");
 
-
+		Rigidbody2D rg = player.GetComponent<Rigidbody2D> ();
+		Vector2 bombToplayer = player.transform.position - transform.position;
+		Vector2 maxDist= new Vector2 (100,100);
+		if (bombToplayer.magnitude < 4) {
+			Debug.Log (bombToplayer);
+			rg.AddForce ((maxDist- bombToplayer) * 8, ForceMode2D.Force);
 		}
 
 		 //This part is based on the tank tutorial
