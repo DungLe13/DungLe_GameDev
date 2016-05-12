@@ -20,7 +20,8 @@ using System.Collections;
 		}
 
 		 //This part is based on the tank tutorial
-		Collider2D[] colliders =Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+
+		/*Collider2D[] colliders =Physics2D.OverlapCircleAll(transform.position, explosionRadius);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			Rigidbody targetRigidbody = colliders[i].GetComponent<Rigidbody> ();
@@ -30,7 +31,7 @@ using System.Collections;
 			if (!playerHealth)
 				continue;
 			Debug.Log ("dead");
-		}
+		}*/
 		explosion.transform.parent = null;
 
 		explosion.Play();
@@ -42,17 +43,7 @@ using System.Collections;
 		Destroy (gameObject);
 
 
-		/*
-			
-		if (other.tag == "Player" || other.tag=="ground") {
-			other.gameObject.GetComponent<PlayerHealth> ().Death ();
-			Quaternion randomRotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
-			Instantiate(explosion, transform.position,randomRotation);
-			Destroy (gameObject);
 
-
-
-		}*/
 	}
 }
 
