@@ -25,7 +25,6 @@ using System.Collections;
 
 
 		if (playerHealth) {
-			Debug.Log ("Player!");
 			playerHealth.Death ();
 			Destroy (gameObject);
 		}

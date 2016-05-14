@@ -61,11 +61,12 @@ public class PlayerMovement : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D other){
 		//Debug.Log ("hey");
 
-		if ((other.gameObject.tag == "Bomb")&& (loaded==false)) {
+		if ((other.gameObject.tag == "Bomb") && (loaded == false)) {
 			anim.SetBool ("HaveBomb", true);
 			Debug.Log ("hey");
 			Destroy (other.gameObject);
 			loaded = true;
+		
 		}
 
 	}
@@ -73,7 +74,9 @@ public class PlayerMovement : MonoBehaviour
 	private void Throw(){
 		isThrown = true;
 		Rigidbody2D bombInstace = Instantiate (explosiveBomb, bombPosition.position, bombPosition.rotation) as Rigidbody2D;
-		bombInstace.velocity = throwForce * bombPosition.forward;
-	
+		bombInstace.velocity = throwForce * bombPosition.right;
+		Debug.Log (bombPosition.right);
+		loaded = false;
+		anim.SetBool ("HaveBomb", false);
 	}
 }
