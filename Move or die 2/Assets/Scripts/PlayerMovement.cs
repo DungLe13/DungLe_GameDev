@@ -11,10 +11,19 @@ public class PlayerMovement : MonoBehaviour
 	bool letsJump;
 	Animator anim;
 	bool loaded;
+	public Rigidbody2D explosiveBomb;
+	public Transform bombPosition;
+	public float throwForce;
+
+	string throwButton;
+	float launchSpeed;
+	bool isThrown;
+
 
 	void Start ()
 	{
 		anim = GetComponent<Animator> ();
+		throwButton = "space";
 	}
 
 	void Update(){
@@ -28,11 +37,17 @@ public class PlayerMovement : MonoBehaviour
 			//anim.SetBool("HaveBomb", false);
 
 		}
-		if ((Input.GetKeyDown ("x"))&&(letsJump==true)) {
+		if ((Input.GetKeyDown ("up"))&&(letsJump==true)) {
 			player1Rigid.velocity = new Vector2 (player1Rigid.velocity.x, player1Rigid.position.y + jumpHeight);
 
 		}
 		previousY=currentY;
+
+		if(Input.GetKeyDown("space")&&(loaded==true)){
+
+			Throw();
+		}
+
 	}
 		
 	void FixedUpdate ()
@@ -53,5 +68,12 @@ public class PlayerMovement : MonoBehaviour
 			loaded = true;
 		}
 
+	}
+
+	private void Throw(){
+		isThrown = true;
+		Rigidbody2D bombInstace = Instantiate (explosiveBomb, bombPosition.position, bombPosition.rotation) as Rigidbody2D;
+		bombInstace.velocity = throwForce * bombPosition.forward;
+	
 	}
 }

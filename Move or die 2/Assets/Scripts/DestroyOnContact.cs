@@ -5,11 +5,7 @@ using System.Collections;
 	public ParticleSystem explosion;
 	public LayerMask playerMask;                        
 	//public AudioSource explosionAudio;                
-	public float damage = 100f;                    
-	//public float m_ExplosionForce = 1000f;              
-	//public float m_MaxLifeTime = 2f;                    
-	public float explosionRadius = 5f; 
-	/*
+
 	void OnTriggerEnter2D(Collider2D other){
 		PlayerHealth playerHealth = other.GetComponent<PlayerHealth> ();
 
@@ -32,9 +28,9 @@ using System.Collections;
 			Debug.Log ("Player!");
 			playerHealth.Death ();
 			Destroy (gameObject);
-			rg = null;
 		}
 		 //This part is based on the tank tutorial
+		/*
 
 		Collider2D[] colliders =Physics2D.OverlapCircleAll(transform.position, explosionRadius);
 		for (int i = 0; i < colliders.Length; i++)
@@ -47,6 +43,7 @@ using System.Collections;
 				continue;
 			Debug.Log ("dead");
 		}
+		*/
 		explosion.transform.parent = null;
 
 		explosion.Play();
@@ -60,7 +57,7 @@ using System.Collections;
 
 
 	}
-*/
+
 }
 
               
