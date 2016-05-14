@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour
 	public float previousY;
 	private Rigidbody2D player1Rigid;
 	bool letsJump;
+	Animator anim;
+	bool loaded;
 
 	void Start ()
 	{
-	
+		anim = GetComponent<Animator> ();
 	}
 
 	void Update(){
@@ -20,11 +22,10 @@ public class PlayerMovement : MonoBehaviour
 
 		if (Mathf.Abs(currentY - previousY)<0.001) {
 			letsJump = true;
-			Debug.Log ("true");
 
 		} else {
 			letsJump = false;
-			Debug.Log ("false");
+			//anim.SetBool("HaveBomb", false);
 
 		}
 		if ((Input.GetKeyDown ("x"))&&(letsJump==true)) {
@@ -32,22 +33,25 @@ public class PlayerMovement : MonoBehaviour
 
 		}
 		previousY=currentY;
-
-	
 	}
-
-
-	
+		
 	void FixedUpdate ()
 	{
-		
-
 		float horizontal_movement = Input.GetAxis ("Horizontal");
 		player1Rigid = GetComponent<Rigidbody2D> ();
 		player1Rigid.velocity = new Vector2 (horizontal_movement * speed, player1Rigid.velocity.y);
 
-
-
 	}
 
+	void OnCollisionEnter2D(Collision2D other){
+		//Debug.Log ("hey");
+
+		if ((other.gameObject.tag == "Bomb")&& (loaded==false)) {
+			anim.SetBool ("HaveBomb", true);
+			Debug.Log ("hey");
+			Destroy (other.gameObject);
+			loaded = true;
+		}
+
+	}
 }

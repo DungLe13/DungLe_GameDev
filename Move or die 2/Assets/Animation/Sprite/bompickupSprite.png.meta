@@ -1,0 +1,98 @@
+fileFormatVersion: 2
+guid: 3b6de569d61b340ccbd202a6c6190b04
+timeCreated: 1463194102
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bompickupSprite_0
+    21300002: bompickupSprite_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 256
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 80
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: bompickupSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 112
+        height: 217
+      alignment: 9
+      pivot: {x: 0.46453243, y: 0.25897312}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52.027634, y: 115.80283}
+        - {x: -52.027634, y: -52.197166}
+        - {x: -51.027634, y: -56.197166}
+        - {x: 49.972366, y: -56.197166}
+        - {x: 59.972366, y: -46.197166}
+        - {x: 59.972366, y: 160.80283}
+        - {x: -12.027634, y: 160.80283}
+        - {x: -35.027634, y: 147.80283}
+    - name: bompickupSprite_1
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 0
+        width: 123
+        height: 228
+      alignment: 9
+      pivot: {x: 0.4273348, y: 0.24446768}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31.43782, y: 172.26137}
+        - {x: -41.56218, y: 165.26137}
+        - {x: -52.56218, y: 131.26137}
+        - {x: -52.56218, y: -53.73863}
+        - {x: -47.56218, y: -55.73863}
+        - {x: 35.43782, y: -55.73863}
+        - {x: 62.43782, y: -22.738628}
+        - {x: 70.43782, y: 41.26137}
+        - {x: 70.43782, y: 172.26137}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
