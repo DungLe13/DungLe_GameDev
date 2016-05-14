@@ -6,7 +6,9 @@ public class PlayerMovement : MonoBehaviour
 
 	public float speed = 10f;
 	public float jumpHeight = 20f;
-	public float previousY;
+	float previousY;
+	float previousX;
+
 	private Rigidbody2D player1Rigid;
 	bool letsJump;
 	Animator anim;
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 	void Update ()
 	{
 		float currentY = GetComponent<Rigidbody2D> ().position.y;
+		float currentX = GetComponent<Rigidbody2D> ().position.x;
 
 		if (Mathf.Abs (currentY - previousY) < 0.001) {
 			letsJump = true;
@@ -45,6 +48,19 @@ public class PlayerMovement : MonoBehaviour
 		previousY = currentY;
 
 		//need to figure out how to change the bomb throwing direction
+		if (currentX < previousX) {
+			if (Input.GetKeyDown ("space") && (loaded == true)) {
+				Throw (right: false);
+			}
+
+		} else {
+			if (Input.GetKeyDown ("space") && (loaded == true)) {
+				Throw (right: true);
+			}
+		}
+		previousX = currentX;
+
+		/*
 		if (Input.GetKeyDown ("space") && (loaded == true)) {
 			if (Input.GetKeyDown (KeyCode.LeftArrow)) {
 				Throw (right: false);
@@ -53,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
 			}
 		}
+		*/
 	}
 
 	void FixedUpdate ()
