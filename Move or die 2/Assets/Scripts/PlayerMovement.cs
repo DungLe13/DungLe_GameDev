@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 	float launchSpeed;
 	bool isThrown;
 
+    public string playerNumber;
 
 	void Start ()
 	{
@@ -74,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		float horizontal_movement = Input.GetAxis ("Horizontal");
+		float horizontal_movement = Input.GetAxis ("Horizontal" + playerNumber);
 		player1Rigid = GetComponent<Rigidbody2D> ();
 		player1Rigid.velocity = new Vector2 (horizontal_movement * speed, player1Rigid.velocity.y);
 
