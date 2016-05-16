@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 	public Transform bombPosition;
 	public float throwForce;
 
+    string jumpButton;
 	string throwButton;
 	float launchSpeed;
 	bool isThrown;
@@ -26,7 +27,8 @@ public class PlayerMovement : MonoBehaviour
 	void Start ()
 	{
 		anim = GetComponent<Animator> ();
-		throwButton = "space";
+		throwButton = "Fire" + playerNumber;
+        jumpButton = "Jump" + playerNumber;
 	}
 
 	void Update ()
@@ -42,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 			//anim.SetBool("HaveBomb", false);
 
 		}
-		if ((Input.GetKeyDown ("up")) && (letsJump == true)) {
+		if ((Input.GetButtonDown (jumpButton)) && (letsJump == true)) {
 			player1Rigid.velocity = new Vector2 (player1Rigid.velocity.x, player1Rigid.position.y + jumpHeight);
 
 		}
@@ -50,12 +52,12 @@ public class PlayerMovement : MonoBehaviour
 
 		//need to figure out how to change the bomb throwing direction
 		if (currentX < previousX) {
-			if (Input.GetKeyDown ("space") && (loaded == true)) {
+			if (Input.GetButtonDown (throwButton) && (loaded == true)) {
 				Throw (right: false);
 			}
 
 		} else {
-			if (Input.GetKeyDown ("space") && (loaded == true)) {
+			if (Input.GetButtonDown (throwButton) && (loaded == true)) {
 				Throw (right: true);
 			}
 		}

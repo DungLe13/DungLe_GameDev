@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class GameOverController : MonoBehaviour {
 
-    public PlayerHealth playerHealth;
-    public float restartDelay = 5f;
+    public PlayerHealth player1Health;
+    public PlayerHealth player2Health;
+    public float restartDelay = 3f;
     public Image timer;
 
     Animator anim;
@@ -20,16 +21,27 @@ public class GameOverController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timeLeft -= Time.deltaTime;
+        //timeLeft -= Time.deltaTime;
 
-        if (playerHealth.isDead || timeLeft <= 0)
+        if (player1Health.isDead)
         {
             anim.SetTrigger("GameOver");
             restartTimer += Time.deltaTime;
 
             if (restartTimer >= restartDelay)
             {
-                playerHealth.RestartLevel();
+                player1Health.RestartLevel();
+            }
+        }
+
+        if (player2Health.isDead)
+        {
+            anim.SetTrigger("GameOver");
+            restartTimer += Time.deltaTime;
+
+            if (restartTimer >= restartDelay)
+            {
+                player2Health.RestartLevel();
             }
         }
     }
