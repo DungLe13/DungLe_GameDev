@@ -7,7 +7,9 @@ public class GameOverController : MonoBehaviour {
     public PlayerHealth player1Health;
     public PlayerHealth player2Health;
     public float restartDelay = 3f;
-    public Image timer;
+    //public Image timer;
+    public Image pigWin;
+    public Image foxWin;
 
     Animator anim;
     float restartTimer;
@@ -17,6 +19,8 @@ public class GameOverController : MonoBehaviour {
     // Use this for initialization
     void Awake () {
         anim = GetComponent<Animator>();
+        pigWin = GetComponent<Image>();
+        foxWin = GetComponent<Image>();
     }
 	
 	// Update is called once per frame
@@ -28,6 +32,10 @@ public class GameOverController : MonoBehaviour {
             anim.SetTrigger("GameOver");
             restartTimer += Time.deltaTime;
 
+            Color newFoxColor = foxWin.color;
+            newFoxColor.a = 1;
+            foxWin.color = newFoxColor;
+
             if (restartTimer >= restartDelay)
             {
                 player1Health.RestartLevel();
@@ -38,6 +46,10 @@ public class GameOverController : MonoBehaviour {
         {
             anim.SetTrigger("GameOver");
             restartTimer += Time.deltaTime;
+
+            Color newPigColor = pigWin.color;
+            newPigColor.a = 1;
+            foxWin.color = newPigColor;
 
             if (restartTimer >= restartDelay)
             {
