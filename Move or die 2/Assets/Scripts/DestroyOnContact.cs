@@ -4,7 +4,7 @@ using System.Collections;
 	public class DestroyOnContact : MonoBehaviour {
 	public ParticleSystem explosion;
 	public LayerMask playerMask;                        
-	//public AudioSource explosionAudio;                
+	public AudioSource explosionAudio;                
 
 	void OnTriggerEnter2D(Collider2D other){
 		PlayerHealth playerHealth = other.GetComponent<PlayerHealth> ();
