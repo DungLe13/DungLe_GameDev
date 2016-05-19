@@ -41,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
 
 		} else {
 			letsJump = false;
-			//anim.SetBool("HaveBomb", false);
 
 		}
 		if ((Input.GetButtonDown (jumpButton)) && (letsJump == true)) {
@@ -50,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
 		}
 		previousY = currentY;
 
-		//need to figure out how to change the bomb throwing direction
 		if (currentX < previousX) {
 			if (Input.GetButtonDown (throwButton) && (loaded == true)) {
 				Throw (right: false);
@@ -63,16 +61,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 		previousX = currentX;
 
-		/*
-		if (Input.GetKeyDown ("space") && (loaded == true)) {
-			if (Input.GetKeyDown (KeyCode.LeftArrow)) {
-				Throw (right: false);
-			} else {
-				Throw (right: true);
 
-			}
-		}
-		*/
 	}
 
 	void FixedUpdate ()
@@ -85,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
 
 	void OnCollisionEnter2D (Collision2D other)
 	{
-		//Debug.Log ("hey");
 
 		if ((other.gameObject.tag == "Bomb") && (loaded == false)) {
 			anim.SetBool ("HaveBomb", true);
