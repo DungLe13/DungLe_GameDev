@@ -99,10 +99,10 @@ public class PlayerMovement : MonoBehaviour
 		*/
 		if (right == true) {
 			bombInstace.velocity = throwForce * bombPosition.right;
-			Debug.Log ("right");
+
 		} else  {
 			bombInstace.velocity = throwForce * bombPosition.right * -1;
-			Debug.Log ("left");
+
 
 		}
 

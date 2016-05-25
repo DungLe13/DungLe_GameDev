@@ -7,10 +7,10 @@ public class GameOverController : MonoBehaviour {
     public PlayerHealth player1Health;
     public PlayerHealth player2Health;
 
-    public Text pigWin;
-    public Text pigLose;
-    public Text foxWin;
-    public Text foxLose;
+	public  Text pigWin;
+	public Text pigLose;
+	public Text foxWin;
+	public Text foxLose;
 
     // Use this for initialization
     void Start () {
