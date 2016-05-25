@@ -38,12 +38,12 @@ public class PlayerHealth : MonoBehaviour {
         if (currentPosition == previousPosition)
         {
             damaged = true;
-            currentHealth -= 0.01f;
+            currentHealth -= 0.005f;
             content.fillAmount = currentHealth;
         } else
         {
             damaged = false;
-            currentHealth += 0.03f;
+            currentHealth += 0.01f;
             content.fillAmount = currentHealth;
 
             if (currentHealth >= 1)
@@ -73,10 +73,7 @@ public class PlayerHealth : MonoBehaviour {
         isDead = true;
         Destroy(this.gameObject);
         playerMovement.enabled = false;
+        SceneManager.LoadScene(2);
     }
 
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(0);
-    }
 }

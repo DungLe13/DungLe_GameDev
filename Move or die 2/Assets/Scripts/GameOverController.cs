@@ -6,55 +6,38 @@ public class GameOverController : MonoBehaviour {
 
     public PlayerHealth player1Health;
     public PlayerHealth player2Health;
-    public float restartDelay = 3f;
-    //public Image timer;
-    public Image pigWin;
-    public Image foxWin;
 
-    Animator anim;
-    float restartTimer;
-
-    float timeLeft = 60f;
+    public Text pigWin;
+    public Text pigLose;
+    public Text foxWin;
+    public Text foxLose;
 
     // Use this for initialization
-    void Awake () {
-        anim = GetComponent<Animator>();
-        pigWin = GetComponent<Image>();
-        foxWin = GetComponent<Image>();
+    void Start () {
+        pigWin = GetComponent<Text>();
+        pigLose = GetComponent<Text>();
+        foxWin = GetComponent<Text>();
+        foxLose = GetComponent<Text>();
+
+        pigWin.enabled = false;
+        pigLose.enabled = false;
+        foxWin.enabled = false;
+        foxLose.enabled = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        //timeLeft -= Time.deltaTime;
 
         if (player1Health.isDead)
         {
-            anim.SetTrigger("GameOver");
-            restartTimer += Time.deltaTime;
-
-            Color newFoxColor = foxWin.color;
-            newFoxColor.a = 1;
-            foxWin.color = newFoxColor;
-
-            if (restartTimer >= restartDelay)
-            {
-                player1Health.RestartLevel();
-            }
+            pigLose.enabled = true;
+            foxWin.enabled = true;
         }
 
         if (player2Health.isDead)
         {
-            anim.SetTrigger("GameOver");
-            restartTimer += Time.deltaTime;
-
-            Color newPigColor = pigWin.color;
-            newPigColor.a = 1;
-            foxWin.color = newPigColor;
-
-            if (restartTimer >= restartDelay)
-            {
-                player2Health.RestartLevel();
-            }
+            pigWin.enabled = true;
+            foxLose.enabled = true;
         }
     }
 }
