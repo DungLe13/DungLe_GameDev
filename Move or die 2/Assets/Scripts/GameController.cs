@@ -1,13 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 	public GameObject bomb;
 
+    public GameObject player1RB;
+    public GameObject player2RB;
+
 	void Start(){
 		StartCoroutine (Spawn ());
-	
+
+        player1RB = GameObject.Find("character_1");
+        player2RB = GameObject.Find("character_2");
 	}
+
+    void Update()
+    {
+        if (player1RB == null)
+        {
+            Debug.Log("PLayer 2 wins");
+            PlayerPrefs.SetInt("Player Win", 2);
+            SceneManager.LoadScene(2);
+        }
+
+        if (player2RB == null)
+        {
+            Debug.Log("Player 1 wins");
+            PlayerPrefs.SetInt("Player Win", 1);
+            SceneManager.LoadScene(2);
+        }
+    }
 
 	IEnumerator Spawn(){
 		yield return new WaitForSeconds (1.0f);

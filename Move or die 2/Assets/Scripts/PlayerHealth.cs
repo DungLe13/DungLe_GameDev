@@ -72,9 +72,7 @@ public class PlayerHealth : MonoBehaviour {
     {
         isDead = true;
         playerMovement.enabled = false;
-        SceneManager.LoadScene(2);
 		Destroy(this.gameObject);
-
     }
 
 }
