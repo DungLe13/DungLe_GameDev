@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class GameOverController : MonoBehaviour {
 
-    public PlayerHealth player1Health;
-    public PlayerHealth player2Health;
+     PlayerHealth player1Health;
+     PlayerHealth player2Health;
 
 	public  Text pigWin;
 	public Text pigLose;
