@@ -28,35 +28,11 @@ using System.Collections;
 			playerHealth.Death ();
 			Destroy (gameObject);
 		}
-		 //This part is based on the tank tutorial
-		/*
-
-		Collider2D[] colliders =Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-		for (int i = 0; i < colliders.Length; i++)
-		{
-			Rigidbody targetRigidbody = colliders[i].GetComponent<Rigidbody> ();
-			if (!targetRigidbody)
-				continue;
-			//PlayerHealth playerHealth = targetRigidbody.GetComponent<PlayerHealth>();
-			if (!playerHealth)
-				continue;
-			Debug.Log ("dead");
-		}
-		*/
 		explosion.transform.parent = null;
-
 		explosion.Play();
-
-		//explosionAudio.Play();
-
 		Destroy (explosion.gameObject, explosion.duration);
-
 		Destroy (gameObject);
-
-
-
 	}
-
 }
 
               

@@ -88,15 +88,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		isThrown = true;
 		Rigidbody2D bombInstace = Instantiate (explosiveBomb, bombPosition.position, bombPosition.rotation) as Rigidbody2D;
-		/*
-		if(Input.GetKeyDown(KeyCode.LeftArrow)){
-			bombInstace.velocity = throwForce * bombPosition.right * -1;
-			Debug.Log (bombInstace.velocity);
 
-		}else{
-		bombInstace.velocity = throwForce * bombPosition.right;
-		}
-		*/
 		if (right == true) {
 			bombInstace.velocity = throwForce * bombPosition.right;
 
