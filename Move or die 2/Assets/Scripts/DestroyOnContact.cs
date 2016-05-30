@@ -10,7 +10,6 @@ using System.Collections;
 		PlayerHealth playerHealth = other.GetComponent<PlayerHealth> ();
 
 		if (playerHealth) {
-			Debug.Log ("Player!");
 			playerHealth.Death ();
 			Destroy (gameObject);
 			}

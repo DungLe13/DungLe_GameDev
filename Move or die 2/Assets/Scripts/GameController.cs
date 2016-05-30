@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 	public GameObject bomb;
-
     public GameObject player1RB;
     public GameObject player2RB;
 
